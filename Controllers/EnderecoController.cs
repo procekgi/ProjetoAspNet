@@ -23,25 +23,25 @@ namespace ProjetoAspNet02_Tarde.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult BuscarCep(string txtCep)
-        {
-            string url = $@"http://viacep.com.br/ws/{txtCep}/json/";
-            WebClient client = new WebClient();
-            TempData["Endereco"] = client.DownloadString(url);
-            return RedirectToAction("Index");
-        }
+        //[HttpPost]
+        //public IActionResult BuscarCep(string txtCep)
+        //{
+        //    string url = $@"http://viacep.com.br/ws/{txtCep}/json/";
+        //    WebClient client = new WebClient();
+        //    TempData["Endereco"] = client.DownloadString(url);
+        //    return RedirectToAction("Index");
+        //}
 
-        public IActionResult DeserializarJson()
-        {
-            if (TempData["Endereco"] != null)
-            {
-                string resultado = TempData["Endereco"].ToString();
-                Endereco endereco = JsonConvert.DeserializeObject<Endereco>(resultado);
-                _enderecoDal.Cadastrar(endereco);
-                return View(endereco);
-            }
-            return View();
-        }
+        //public IActionResult DeserializarJson()
+        //{
+        //    if (TempData["Endereco"] != null)
+        //    {
+        //        string resultado = TempData["Endereco"].ToString();
+        //        Endereco endereco = JsonConvert.DeserializeObject<Endereco>(resultado);
+        //        _enderecoDal.Cadastrar(endereco);
+        //        return View(endereco);
+        //    }
+        //    return View();
+        //}
     }
 }
