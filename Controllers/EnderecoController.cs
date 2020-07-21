@@ -30,7 +30,6 @@ namespace ProjetoAspNet02_Tarde.Controllers
             WebClient client = new WebClient();
             TempData["Endereco"] = client.DownloadString(url);
             return RedirectToAction("Index");
-
         }
 
         public IActionResult DeserializarJson()

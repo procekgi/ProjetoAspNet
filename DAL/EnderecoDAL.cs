@@ -15,10 +15,16 @@ namespace ProjetoAspNet02_Tarde
             _context = context;
         }
 
-        public void Cadastrar(Endereco endereco)
+        public int Cadastrar(Endereco endereco)
         {
             _context.Add(endereco);
-            _context.SaveChanges();
+            return _context.SaveChanges();
+            
+        }
+
+        public Endereco BuscarEndereco(int id)
+        {
+            return _context.Enderecos.Find(id);
         }
 
         public List<Endereco> Listar()
