@@ -69,7 +69,7 @@ namespace ProjetoAspNet02_Tarde.Controllers
 
         [HttpDelete]
         [Route("Remover")]
-        public IActionResult Remover([FromRoute] int id)
+        public IActionResult Remover(int id)
         {
             Endereco endereco = _enderecoDAL.BuscarEndereco(id);
             _enderecoDAL.Remover(endereco);
@@ -78,7 +78,7 @@ namespace ProjetoAspNet02_Tarde.Controllers
 
         [HttpPut]
         [Route("Alterar")]
-        public IActionResult Alterar([FromRoute] int id)
+        public IActionResult Alterar(int id)
         {
             Endereco endereco = _enderecoDAL.BuscarEndereco(id);
             _enderecoDAL.Alterar(endereco);
